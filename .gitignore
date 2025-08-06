@@ -1,0 +1,5 @@
+source/
+*.pyc
+output
+tensorboard
+__pycache__
