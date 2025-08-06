@@ -1,0 +1,62 @@
+{
+  "gene_time": "2025-04-30_03:23:39",
+  "data_num": 649,
+  "process_step": {
+    "0": {
+      "Deduplicate": {
+        "rule": "first",
+        "columns": [
+          "time"
+        ]
+      }
+    },
+    "1": {
+      "Mask": {
+        "lim_dict": {
+          "h": [
+            0,
+            500
+          ],
+          "v": [
+            75,
+            600
+          ]
+        }
+      }
+    },
+    "2": {
+      "TrackResample": {
+        "time_seq_unit": "1s",
+        "time_seq_final": "6s",
+        "min_raw_data_len": 10,
+        "min_final_data_len": 15,
+        "interpolate_kwargs": {
+          "method": "polynomial",
+          "order": 2
+        },
+        "time_key": "time"
+      }
+    },
+    "3": {
+      "Clip": {
+        "lim_dict": {
+          "h": [
+            0,
+            500
+          ],
+          "v": [
+            75,
+            600
+          ]
+        }
+      }
+    },
+    "4": {
+      "LengthFilter": {
+        "length": 120,
+        "pass_when_longer": true
+      }
+    }
+  },
+  "transform_step": {}
+}
