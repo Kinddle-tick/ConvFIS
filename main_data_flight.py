@@ -36,13 +36,7 @@ database_name = "quin33.sqlite"
 used_db_id = [0,1,2,3,4,5]
 group_name = "quin33"
 
-database_path = database_name
-if system_platform == "Darwin":
-    database_path = os.path.join(os.path.expanduser(os.path.join("~", "Data")), database_name)
-elif system_platform == "Linux":
-    database_path = os.path.join(os.path.expanduser(os.path.join("~", "Data")), database_name)
-elif system_platform == "Windows":
-    database_path = os.path.join(os.path.expanduser(os.path.join("~", "Data")), database_name)
+database_path = os.path.join(root, "source", database_name)
 
 save_dir = os.path.join(root, "source", "data_group")
 time_seq = "6s"
